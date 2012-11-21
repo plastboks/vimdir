@@ -1,0 +1,4 @@
+vimdir
+======
+
+my .vim dir
