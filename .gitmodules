@@ -12,4 +12,10 @@
 	url = git://github.com/scrooloose/nerdcommenter.git
 [submodule "bundle/supertab"]
 	path = bundle/supertab
-	url = git://github.com/vim-scripts/supertab.git
+	url = git://github.com/vim-scripts/SuperTab.git
+[submodule "bundle/fugitive"]
+	path = bundle/fugitive
+	url = git://github.com/tpope/vim-fugitive.git
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = git://github.com/majutsushi/tagbar.git
