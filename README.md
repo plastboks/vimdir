@@ -1,4 +1,0 @@
-vimdir
-======
-
-my .vim dir
