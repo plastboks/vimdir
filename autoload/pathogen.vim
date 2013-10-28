@@ -10,6 +10,7 @@
 "
 " The API is documented inline below.  For maximum ease of reading,
 " :set foldmethod=marker
+let g:pathogen_disabled = ['powerline']
 
 if exists("g:loaded_pathogen") || &cp
   finish

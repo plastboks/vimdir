@@ -28,3 +28,6 @@
 [submodule "bundle/phpqa"]
 	path = bundle/phpqa
 	url = git@github.com:joonty/vim-phpqa.git
+[submodule "bundle/airline"]
+	path = bundle/airline
+	url = git@github.com:bling/vim-airline.git
