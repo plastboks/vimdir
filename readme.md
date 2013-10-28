@@ -11,3 +11,4 @@ Install
 Update
 ======
 * Run `git submodule update`
+* Run `git submodule foreach git pull origin master`
