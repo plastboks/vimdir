@@ -18,7 +18,7 @@ set autoindent
 set smartindent
 
 " cursorline
-" set cursorline
+"set cursorline
 
 " Expand the command line using tab
 set wildchar=<Tab>
@@ -30,10 +30,8 @@ set number
 set listchars=tab:▸\ ,eol:$
 set nolist
 
-" Fold using markers {{{
-" like this
-" }}}
-" set foldmethod=marker
+" Fold using markers {{{ like this }}}
+"set foldmethod=marker
 
 " enable all features
 set nocompatible
@@ -74,14 +72,26 @@ set showmatch
 " write before hiding a buffer
 set autowrite
 
-" allows hidden buffers to stay unsaved, but we do not want this, so comment
-" it out:
+" ---more--- like less
+set more
+
+" lines above/below cursor
+set scrolloff=5
+
+" window title
+set title
+
+" cursor background highlight
+"set cursorline
+"set cursorcolumn
+
+" allows hidden buffers to stay unsaved, but we do not want this, so comment it out.
 "set hidden
 
 "set wmh=0
 
 " auto-detect the filetype
-" filetype plugin indent on
+"filetype plugin indent on
 
 " syntax highlight
 syntax on
@@ -92,12 +102,13 @@ set bg=dark
 " Always show the menu, insert longest match
 set completeopt=menuone,longest
 
-"Invisible character colors
+" some color definitions
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
-
-" number color
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+highlight CursorLine term=bold cterm=bold ctermbg=235
+highlight CursorColumn ctermbg=235
+highlight Search ctermfg=Yellow ctermbg=NONE cterm=bold,underline
 
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
@@ -119,6 +130,53 @@ hi Underlined   ctermfg=7
 hi Ignore       ctermfg=9
 hi Error        ctermfg=11
 hi Todo         ctermfg=1
+
+
+" Cursor color for xterm or rxvt
+if &term =~ "xterm\\|rxvt"
+  " use an orange cursor in insert mode
+  let &t_SI = "\<Esc>]12;orange\x7"
+  " use a red cursor otherwise
+  let &t_EI = "\<Esc>]12;red\x7"
+  silent !echo -ne "\033]12;red\007"
+  " reset cursor when vim exits
+  "autocmd VimLeave * silent !echo -ne "\033]112\007"
+  " use \003]12;gray\007 for gnome-terminal
+endif
+
+
+" cpp highlighting for arduino files
+autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
+
+" PHP Code Sniffer binary (default = "phpcs")
+let g:phpqa_codesniffer_cmd="~/.bin/php/PHP_CodeSniffer/scripts/phpcs"
+
+" PHP Mess Detector binary (default = "phpmd")
+"let g:phpqa_messdetector_cmd='~/.bin/php/phpcs')
+
+" Don't run messdetector on save (default = 1)
+let g:phpqa_messdetector_autorun = 0
+
+" Don't run codesniffer on save (default = 1)
+let g:phpqa_codesniffer_autorun = 0
+
+" Show code coverage on load (default = 0)
+let g:phpqa_codecoverage_autorun = 1
+
+" Airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+
+" GitGutter
+let g:gitgutter_enabled = 1
+let g:gitgutter_highlight_lines = 1
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
+highlight GitGutterAddLine ctermfg=NONE ctermbg=235 cterm=NONE
+highlight GitGutterChangeLine ctermfg=NONE ctermbg=235 cterm=NONE
+highlight GitGutterDeleteLine ctermfg=NONE ctermbg=234 cterm=NONE
+highlight GitGutterChangeDeleteLine ctermfg=NONE ctermbg=235 cterm=NONE
+highlight clear SignColumn
 
 
 """ GPG AREA
@@ -153,59 +211,3 @@ autocmd BufWritePre,FileWritePre    *.gpg let &sh=shsave
 autocmd BufWritePost,FileWritePost  *.gpg silent u
 autocmd BufWritePost,FileWritePost  *.gpg set nobin
 augroup END
-
-
-""" TESTAREA
-set more                                    " ---more--- like less
-set scrolloff=5                             " lines above/below cursor
-set title                                   " window title
-
-if &term =~ "xterm\\|rxvt"
-  " use an orange cursor in insert mode
-  let &t_SI = "\<Esc>]12;orange\x7"
-  " use a red cursor otherwise
-  let &t_EI = "\<Esc>]12;red\x7"
-  silent !echo -ne "\033]12;red\007"
-  " reset cursor when vim exits
-  "autocmd VimLeave * silent !echo -ne "\033]112\007"
-  " use \003]12;gray\007 for gnome-terminal
-endif
-
-"set cursorline
-"set cursorcolumn
-highlight CursorLine term=bold cterm=bold ctermbg=235
-highlight CursorColumn ctermbg=235
-highlight Search ctermfg=Yellow ctermbg=NONE cterm=bold,underline
-
-" cpp highlighting for arduino files
-autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
-
-" PHP Code Sniffer binary (default = "phpcs")
-let g:phpqa_codesniffer_cmd="~/.bin/php/PHP_CodeSniffer/scripts/phpcs"
-
-" PHP Mess Detector binary (default = "phpmd")
-" let g:phpqa_messdetector_cmd='~/.bin/php/phpcs')
-
-" Don't run messdetector on save (default = 1)
-let g:phpqa_messdetector_autorun = 0
-
-" Don't run codesniffer on save (default = 1)
-let g:phpqa_codesniffer_autorun = 0
-
-" Show code coverage on load (default = 0)
-let g:phpqa_codecoverage_autorun = 1
-
-" Airline
-let g:airline#extensions#tabline#enabled = 1
-"let g:airline_powerline_fonts = 1
-
-" GitGutter
-let g:gitgutter_enabled = 1
-let g:gitgutter_highlight_lines = 1
-let g:gitgutter_realtime = 0
-let g:gitgutter_eager = 0
-highlight GitGutterAddLine ctermfg=NONE ctermbg=235 cterm=NONE
-highlight GitGutterChangeLine ctermfg=NONE ctermbg=235 cterm=NONE
-highlight GitGutterDeleteLine ctermfg=NONE ctermbg=234 cterm=NONE
-highlight GitGutterChangeDeleteLine ctermfg=NONE ctermbg=235 cterm=NONE
-highlight clear SignColumn
