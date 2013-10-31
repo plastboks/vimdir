@@ -1,8 +1,12 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+" enable all features
+set nocompatible
+
 " Wrap too long lines
 set wrap
+set linebreak
 
 " Tabs are 4 characters
 set tabstop=4
@@ -16,6 +20,7 @@ set expandtab
 " guess indentation
 set autoindent
 set smartindent
+set smarttab
 
 " cursorline
 "set cursorline
@@ -32,9 +37,6 @@ set nolist
 
 " Fold using markers {{{ like this }}}
 "set foldmethod=marker
-
-" enable all features
-set nocompatible
 
 " show statusline
 set laststatus=2
@@ -55,7 +57,7 @@ set incsearch
 set textwidth=0
 
 " history
-set history=200
+set history=1000
 
 " 1000 undo levels
 set undolevels=1000
