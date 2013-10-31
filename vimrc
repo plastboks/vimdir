@@ -195,6 +195,10 @@ let g:phpqa_codesniffer_autorun = 0
 " Show code coverage on load (default = 0)
 let g:phpqa_codecoverage_autorun = 1
 
+" Airline
+let g:airline#extensions#tabline#enabled = 1
+"let g:airline_powerline_fonts = 1
+
 " GitGutter
 let g:gitgutter_enabled = 1
 let g:gitgutter_highlight_lines = 1
