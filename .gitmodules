@@ -34,3 +34,6 @@
 [submodule "bundle/virtualenv"]
 	path = bundle/virtualenv
 	url = git@github.com:jmcantrell/vim-virtualenv.git
+[submodule "bundle/gitgutter"]
+	path = bundle/gitgutter
+	url = git@github.com:airblade/vim-gitgutter.git
