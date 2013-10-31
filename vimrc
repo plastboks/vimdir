@@ -22,9 +22,6 @@ set autoindent
 set smartindent
 set smarttab
 
-" cursorline
-"set cursorline
-
 " Expand the command line using tab
 set wildchar=<Tab>
 
