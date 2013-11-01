@@ -92,6 +92,12 @@ set title
 " auto-detect the filetype
 "filetype plugin indent on
 
+" enables filetype detection
+filetype on
+
+" enables filetype specific plugins
+filetype plugin on
+
 " syntax highlight
 syntax on
 
