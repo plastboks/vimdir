@@ -17,7 +17,7 @@ set shiftwidth=4
 " spaces instead of tabs
 set expandtab
 
-" guess indentation
+" set indentation
 set autoindent
 set smartindent
 set smarttab
@@ -31,9 +31,6 @@ set number
 " show tabs and eol
 set listchars=tab:▸\ ,eol:$
 set nolist
-
-" Fold using markers {{{ like this }}}
-"set foldmethod=marker
 
 " show statusline
 set laststatus=2
@@ -80,6 +77,21 @@ set scrolloff=5
 " window title
 set title
 
+" we use a dark background, don't we?
+set bg=dark
+
+" Always show the menu, insert longest match
+set completeopt=menuone,longest
+
+" enables filetype detection
+filetype on
+
+" enables filetype specific plugins
+filetype plugin on
+
+" syntax highlight
+syntax on
+
 " cursor background highlight
 "set cursorline
 "set cursorcolumn
@@ -92,20 +104,8 @@ set title
 " auto-detect the filetype
 "filetype plugin indent on
 
-" enables filetype detection
-filetype on
-
-" enables filetype specific plugins
-filetype plugin on
-
-" syntax highlight
-syntax on
-
-" we use a dark background, don't we?
-set bg=dark
-
-" Always show the menu, insert longest match
-set completeopt=menuone,longest
+" Fold using markers {{{ like this }}}
+"set foldmethod=marker
 
 " some color definitions
 highlight NonText guifg=#4a4a59
@@ -114,6 +114,9 @@ highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE gui
 highlight CursorLine term=bold cterm=bold ctermbg=235
 highlight CursorColumn ctermbg=235
 highlight Search ctermfg=Yellow ctermbg=NONE cterm=bold,underline
+
+" cpp highlighting for arduino files
+autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
 
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
@@ -137,7 +140,10 @@ hi Error        ctermfg=11
 hi Todo         ctermfg=1
 
 
-" Cursor color for xterm or rxvt
+"
+" Cursor color
+" xterm, rxvt
+"
 if &term =~ "xterm\\|rxvt"
   " use an orange cursor in insert mode
   let &t_SI = "\<Esc>]12;orange\x7"
@@ -149,30 +155,29 @@ if &term =~ "xterm\\|rxvt"
   " use \003]12;gray\007 for gnome-terminal
 endif
 
-
-" cpp highlighting for arduino files
-autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
-
+"
+" PHP
+"
 " PHP Code Sniffer binary (default = "phpcs")
 let g:phpqa_codesniffer_cmd="~/.bin/php/PHP_CodeSniffer/scripts/phpcs"
-
 " PHP Mess Detector binary (default = "phpmd")
 "let g:phpqa_messdetector_cmd='~/.bin/php/phpcs')
-
 " Don't run messdetector on save (default = 1)
 let g:phpqa_messdetector_autorun = 0
-
 " Don't run codesniffer on save (default = 1)
 let g:phpqa_codesniffer_autorun = 0
-
 " Show code coverage on load (default = 0)
 let g:phpqa_codecoverage_autorun = 1
 
+" 
 " Airline
+"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
+"
 " GitGutter
+"
 let g:gitgutter_enabled = 1
 let g:gitgutter_highlight_lines = 1
 let g:gitgutter_realtime = 0
@@ -184,8 +189,11 @@ highlight GitGutterChangeDeleteLine ctermfg=NONE ctermbg=235 cterm=NONE
 highlight clear SignColumn
 
 
-""" GPG AREA
+"
+" GPG
+"
 " Transparent editing of gpg encrypted files.
+"
 augroup encrypted
 au!
 " First make sure nothing is written to ~/.viminfo while editing
