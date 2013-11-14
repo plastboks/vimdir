@@ -35,14 +35,18 @@ set nolist
 " Fold using markers {{{ like this }}}
 "set foldmethod=marker
 
-" show statusline
+" show status line
 set laststatus=2
 
 " powerful backspaces
 set backspace=indent,eol,start
 
-" highlight the searchterms
+" highlight the search term
 set hlsearch
+
+" enable spelling
+set spell
+set spell spelllang=en_us
 
 " jump to the matches while typing
 set incsearch
@@ -90,13 +94,13 @@ set title
 "set wmh=0
 
 " auto-detect the filetype
-"filetype plugin indent on
+filetype plugin indent on
 
 " enables filetype detection
-filetype on
+"filetype on
 
 " enables filetype specific plugins
-filetype plugin on
+"filetype plugin on
 
 " syntax highlight
 syntax on
@@ -114,6 +118,15 @@ highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE gui
 highlight CursorLine term=bold cterm=bold ctermbg=235
 highlight CursorColumn ctermbg=235
 highlight Search ctermfg=Yellow ctermbg=NONE cterm=bold,underline
+
+highlight clear SpellBad
+highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline gui=undercurl
+highlight clear SpellCap
+highlight SpellCap term=underline cterm=underline
+highlight clear SpellRare
+highlight SpellRare term=underline cterm=underline
+highlight clear SpellLocal
+highlight SpellLocal term=underline cterm=underline
 
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
