@@ -106,6 +106,10 @@ syntax on
 "set cursorline
 "set cursorcolumn
 
+" set static colorcolumn at 90 chars
+set colorcolumn=91
+highlight ColorColumn ctermbg=234 guibg=234
+
 " allows hidden buffers to stay unsaved, but we do not want this, so comment it out.
 "set hidden
 
