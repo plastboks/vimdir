@@ -247,3 +247,9 @@ autocmd BufWritePre,FileWritePre    *.gpg let &sh=shsave
 autocmd BufWritePost,FileWritePost  *.gpg silent u
 autocmd BufWritePost,FileWritePost  *.gpg set nobin
 augroup END
+
+" Solarized test area"
+"let g:solarized_termcolors=256
+"syntax enable
+"set background=light
+"colorscheme solarized
