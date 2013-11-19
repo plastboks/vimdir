@@ -108,7 +108,7 @@ syntax on
 
 " set static colorcolumn at 90 chars
 set colorcolumn=91
-highlight ColorColumn ctermbg=234 guibg=234
+highlight ColorColumn ctermbg=235 guibg=235
 
 " allows hidden buffers to stay unsaved, but we do not want this, so comment it out.
 "set hidden
@@ -163,10 +163,7 @@ hi Error        ctermfg=11
 hi Todo         ctermfg=1
 
 
-"
-" Cursor color
-" xterm, rxvt
-"
+" #### xterm, rxvt - cursor color ####
 if &term =~ "xterm\\|rxvt"
   " use an orange cursor in insert mode
   let &t_SI = "\<Esc>]12;orange\x7"
@@ -177,10 +174,9 @@ if &term =~ "xterm\\|rxvt"
   "autocmd VimLeave * silent !echo -ne "\033]112\007"
   " use \003]12;gray\007 for gnome-terminal
 endif
+" #### End. xterm, rxvt - cursor color ####
 
-"
-" PHP
-"
+" #### PHP ####
 " PHP Code Sniffer binary (default = "phpcs")
 let g:phpqa_codesniffer_cmd="~/.bin/php/PHP_CodeSniffer/scripts/phpcs"
 " PHP Mess Detector binary (default = "phpmd")
@@ -191,16 +187,14 @@ let g:phpqa_messdetector_autorun = 0
 let g:phpqa_codesniffer_autorun = 0
 " Show code coverage on load (default = 0)
 let g:phpqa_codecoverage_autorun = 1
+" #### End PHP ####
 
-" 
-" Airline
-"
+" #### Airline ####
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+" #### End Airline ####
 
-"
-" GitGutter
-"
+" #### GitGutter ####
 let g:gitgutter_enabled = 1
 let g:gitgutter_highlight_lines = 1
 let g:gitgutter_realtime = 0
@@ -210,13 +204,10 @@ highlight GitGutterChangeLine ctermfg=NONE ctermbg=235 cterm=NONE
 highlight GitGutterDeleteLine ctermfg=NONE ctermbg=234 cterm=NONE
 highlight GitGutterChangeDeleteLine ctermfg=NONE ctermbg=235 cterm=NONE
 highlight clear SignColumn
+" #### End GitGutter ####
 
 
-"
-" GPG
-"
-" Transparent editing of gpg encrypted files.
-"
+" #### GPG - Transparent editing of gpg encrypted files ####
 augroup encrypted
 au!
 " First make sure nothing is written to ~/.viminfo while editing
@@ -247,8 +238,9 @@ autocmd BufWritePre,FileWritePre    *.gpg let &sh=shsave
 autocmd BufWritePost,FileWritePost  *.gpg silent u
 autocmd BufWritePost,FileWritePost  *.gpg set nobin
 augroup END
+" #### End GPG ####
 
-" Solarized test area"
+" ######## Solarized test area ##########"
 " let g:solarized_termcolors=256
 " let g:solarized_visibility= "normal"
 " let g:solarized_termtrans = 1
@@ -256,3 +248,4 @@ augroup END
 " syntax enable
 " set background=dark
 " colorscheme solarized
+" ######## End solarized test area ##########"
