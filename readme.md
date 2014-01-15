@@ -14,6 +14,14 @@ Update
 * Run `git submodule update`
 * Optional run `git submodule foreach git pull origin master`, this might be usefull in some cases
 
+Howtos
+======
+* Spelling
+  * Change lang = `set spell spelllang=`
+  * `zg` add word
+  * `zw` reverse
+  * `:set spell` to turn on, `:set nospell` to turn off.
+
 Submodules
 ==========
 Almost all (all) the plugins used in my vim dotdir directory is git(hub.com) submodules.
