@@ -17,8 +17,9 @@ Update
 Howtos
 ======
 * Spelling
-  * Change lang = `set spell spelllang=`
+  * Change lang = `set spell spelllang=` (eg: no, en ...)
   * `zg` add word
+  * `z=` lookup suggestion
   * `zw` reverse
   * `:set spell` to turn on, `:set nospell` to turn off.
 
