@@ -20,7 +20,7 @@ set expandtab
 " set indentation
 set autoindent
 set smartindent
-set smarttab
+"set smarttab
 
 " Expand the command line using tab
 set wildchar=<Tab>
