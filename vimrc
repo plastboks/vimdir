@@ -121,6 +121,10 @@ highlight ColorColumn ctermbg=235 guibg=235
 " Fold using markers {{{ like this }}}
 "set foldmethod=marker
 
+" local vimrc support
+set exrc
+set secure
+
 " some color definitions
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
