@@ -18,9 +18,10 @@ set shiftwidth=4
 set expandtab
 
 " set indentation
+set nowrap
 set autoindent
 set smartindent
-"set smarttab
+set cindent
 
 " Expand the command line using tab
 set wildchar=<Tab>
@@ -125,9 +126,6 @@ highlight ColorColumn ctermbg=235 guibg=235
 set exrc
 set secure
 
-" you complete me
-let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
-
 " some color definitions
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
@@ -199,7 +197,6 @@ let g:phpqa_codecoverage_autorun = 1
 " #### Airline ####
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-" #### End Airline ####
 
 " #### GitGutter ####
 let g:gitgutter_enabled = 1
@@ -211,7 +208,6 @@ highlight GitGutterChangeLine ctermfg=NONE ctermbg=235 cterm=NONE
 highlight GitGutterDeleteLine ctermfg=NONE ctermbg=234 cterm=NONE
 highlight GitGutterChangeDeleteLine ctermfg=NONE ctermbg=235 cterm=NONE
 highlight clear SignColumn
-" #### End GitGutter ####
 
 
 " #### GPG - Transparent editing of gpg encrypted files ####
@@ -245,7 +241,6 @@ autocmd BufWritePre,FileWritePre    *.gpg let &sh=shsave
 autocmd BufWritePost,FileWritePost  *.gpg silent u
 autocmd BufWritePost,FileWritePost  *.gpg set nobin
 augroup END
-" #### End GPG ####
 
 " ######## Solarized test area ##########"
 " let g:solarized_termcolors=256
@@ -258,11 +253,21 @@ augroup END
 " ######## End solarized test area ##########"
 "
 " ############# Latex ################### "
-" Set the following lines in your ~/.vimrc or the systemwide /etc/vimrc:
-filetype plugin indent on
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
-" Also, this installs to /usr/share/vim/vimfiles, which may not be in
-" your runtime path (RTP). Be sure to add it too, e.g:
-"set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
 
+" ######## NerdTree ############ "
+let NERDTreeHijackNetrw=1
+
+" ####### you complete me ##### "
+let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+
+" ##### Kick the habit ######## "
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+" ####### Java stuff ###### "
+autocmd Filetype java set makeprg=javac\ %
+set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
