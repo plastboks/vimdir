@@ -125,6 +125,9 @@ highlight ColorColumn ctermbg=235 guibg=235
 set exrc
 set secure
 
+" you complete me
+let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+
 " some color definitions
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59

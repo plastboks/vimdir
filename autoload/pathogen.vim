@@ -10,7 +10,7 @@
 "
 " The API is documented inline below.  For maximum ease of reading,
 " :set foldmethod=marker
-let g:pathogen_disabled = ['powerline', 'phpqa', 'snipmate']
+let g:pathogen_disabled = ['powerline', 'phpqa', 'snipmate', 'supertab']
 
 if exists("g:loaded_pathogen") || &cp
   finish

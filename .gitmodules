@@ -49,3 +49,6 @@
 [submodule "bundle/solarized-theme"]
 	path = bundle/solarized-theme
 	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/YouCompleteMe"]
+	path = bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
