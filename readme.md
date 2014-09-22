@@ -10,9 +10,7 @@ Install
 
 Update
 ======
-* Run `git submodule init`
-* Run `git submodule update`
-* Optional run `git submodule foreach git pull origin master`, this might be usefull in some cases
+* Run `git submodule update --init --recursive'
 
 Howtos
 ======
