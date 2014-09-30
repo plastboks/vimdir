@@ -271,3 +271,8 @@ noremap <Right> <NOP>
 " ####### Java stuff ###### "
 autocmd Filetype java set makeprg=javac\ %
 set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
+
+" ####### CtrlP stuff ##### "
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|output|bower_components|dist)|(\.(swp|hg|git|svn))$'
+let g:ctrlp_root_markers = ['.ctrlp']
