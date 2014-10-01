@@ -272,13 +272,11 @@ noremap <Right> <NOP>
 autocmd Filetype java set makeprg=javac\ %
 set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
 
-<<<<<<< HEAD
 " ###### Hardtime ##### "
 let g:hardtime_default_on = 1
 let g:hardtime_maxcount = 2
-=======
+
 " ####### CtrlP stuff ##### "
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|output|bower_components|dist)|(\.(swp|hg|git|svn))$'
 let g:ctrlp_root_markers = ['.ctrlp']
->>>>>>> 00f824d19f5c239660cc4b637e9c72fa9a75dd61
