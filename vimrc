@@ -271,3 +271,7 @@ noremap <Right> <NOP>
 " ####### Java stuff ###### "
 autocmd Filetype java set makeprg=javac\ %
 set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
+
+" ###### Hardtime ##### "
+let g:hardtime_default_on = 1
+let g:hardtime_maxcount = 2

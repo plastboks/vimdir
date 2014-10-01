@@ -52,3 +52,6 @@
 [submodule "bundle/YouCompleteMe"]
 	path = bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "bundle/hardtime"]
+	path = bundle/hardtime
+	url = https://github.com/takac/vim-hardtime.git
