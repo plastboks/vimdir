@@ -12,7 +12,7 @@
 	url = git://github.com/scrooloose/nerdcommenter.git
 [submodule "bundle/supertab"]
 	path = bundle/supertab
-	url = git@github.com:ervandew/supertab.git
+	url = git://github.com/ervandew/supertab.git
 [submodule "bundle/fugitive"]
 	path = bundle/fugitive
 	url = git://github.com/tpope/vim-fugitive.git
@@ -24,28 +24,28 @@
 	url = git://github.com/Lokaltog/vim-powerline.git
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
-	url = git@github.com:scrooloose/nerdtree.git
+	url = git://github.com/scrooloose/nerdtree.git
 [submodule "bundle/phpqa"]
 	path = bundle/phpqa
-	url = git@github.com:joonty/vim-phpqa.git
+	url = git://github.com/joonty/vim-phpqa.git
 [submodule "bundle/airline"]
 	path = bundle/airline
-	url = git@github.com:bling/vim-airline.git
+	url = git://github.com/bling/vim-airline.git
 [submodule "bundle/virtualenv"]
 	path = bundle/virtualenv
-	url = git@github.com:jmcantrell/vim-virtualenv.git
+	url = git://github.com/jmcantrell/vim-virtualenv.git
 [submodule "bundle/gitgutter"]
 	path = bundle/gitgutter
-	url = git@github.com:airblade/vim-gitgutter.git
+	url = git://github.com/airblade/vim-gitgutter.git
 [submodule "bundle/snipmate"]
 	path = bundle/snipmate
-	url = git@github.com:garbas/vim-snipmate.git
+	url = git://github.com/garbas/vim-snipmate.git
 [submodule "bundle/mw-utils"]
 	path = bundle/mw-utils
-	url = git@github.com:MarcWeber/vim-addon-mw-utils.git
+	url = git://github.com/MarcWeber/vim-addon-mw-utils.git
 [submodule "bundle/tlib"]
 	path = bundle/tlib
-	url = git@github.com:tomtom/tlib_vim.git
+	url = git://github.com/tomtom/tlib_vim.git
 [submodule "bundle/solarized-theme"]
 	path = bundle/solarized-theme
 	url = git://github.com/altercation/vim-colors-solarized.git
@@ -58,3 +58,6 @@
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule "bundle/vim-scala"]
+	path = bundle/vim-scala
+	url = https://github.com/derekwyatt/vim-scala.git
