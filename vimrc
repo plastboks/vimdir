@@ -146,6 +146,9 @@ highlight SpellLocal term=underline cterm=underline
 " cpp highlighting for arduino files
 autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
 
+" lisp highlighting for lispy files
+autocmd BufNewFile,BufReadPost *.lspy set filetype=lisp
+
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
 " (happens when dropping a file on gvim).
