@@ -109,7 +109,7 @@ syntax on
 
 " set static colorcolumn at 90 chars
 set colorcolumn=91
-highlight ColorColumn ctermbg=235 guibg=235
+highlight ColorColumn ctermbg=235
 
 " allows hidden buffers to stay unsaved, but we do not want this, so comment it out.
 "set hidden
